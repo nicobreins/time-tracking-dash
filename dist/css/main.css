@@ -22,7 +22,7 @@ body {
 main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 25vh 25vh;
+  grid-template-rows: 28vh 28vh;
   grid-template-areas: "profil card1 card2 card3" "profil card4 card5 card6";
   gap: 2rem;
   width: 75vw;
@@ -38,7 +38,7 @@ main {
   background-color: var(--Blue);
   border-radius: 1.2rem;
   padding: 2rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 3.5rem;
 }
 .profile-user-details .profile-pic {
   border: 3px solid white;
@@ -70,17 +70,17 @@ main {
   padding: 2rem;
   gap: 1rem;
   position: relative;
-  transform: translateY(-3rem);
+  transform: translateY(-4rem);
   padding-top: 4rem;
 }
 .profile-nav::before {
   content: "";
   width: 100%;
-  height: 2rem;
+  height: 3rem;
   background-color: var(--Blue);
   position: absolute;
   left: 0;
-  top: 0;
+  top: -0.1rem;
   border-radius: 0rem 0rem 1.2rem 1.2rem;
 }
 .profile-nav a {
@@ -92,28 +92,64 @@ main {
   color: #fff;
 }
 
+.small-card .card-bg {
+  height: 2rem;
+}
+.small-card .card-details {
+  background-color: var(--Dark-blue);
+  color: #fff;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+.small-card .card-details .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.small-card .card-details .card-header h3 {
+  margin: 0;
+}
+
 .work {
   grid-area: card1;
+}
+.work .card-bg {
+  background-color: var(--Light-red-work);
 }
 
 .play {
   grid-area: card2;
 }
+.play .card-bg {
+  background-color: var(--Light-red-work);
+}
 
 .study {
   grid-area: card3;
+}
+.study .card-bg {
+  background-color: var(--Light-red-work);
 }
 
 .exercise {
   grid-area: card4;
 }
+.exercise .card-bg {
+  background-color: var(--Light-red-work);
+}
 
 .social {
   grid-area: card5;
 }
+.social .card-bg {
+  background-color: var(--Light-red-work);
+}
 
 .care {
   grid-area: card6;
+}
+.care .card-bg {
+  background-color: var(--Light-red-work);
 }
 
 /*# sourceMappingURL=main.css.map */
