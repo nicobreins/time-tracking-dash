@@ -22,30 +22,48 @@ body {
 main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 28vh 28vh;
+  grid-template-rows: repeat(2, 1fr);
   grid-template-areas: "profil card1 card2 card3" "profil card4 card5 card6";
-  gap: 2rem;
-  width: 75vw;
-  height: 50vh;
+  gap: 1.5rem;
+  max-width: 105ch;
   margin: auto;
+}
+@media (max-width: 480px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .profile.card {
   grid-area: profil;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  position: relative;
 }
 .profile-user-details {
   background-color: var(--Blue);
-  border-radius: 1.2rem;
+  border-radius: 1rem;
   padding: 2rem;
-  padding-bottom: 3.5rem;
+  padding-bottom: 1.2rem;
+  z-index: 2;
+}
+@media (max-width: 480px) {
+  .profile-user-details {
+    height: auto;
+  }
+  .profile-user-details h1 {
+    font-size: 2rem;
+  }
 }
 .profile-user-details .profile-pic {
   border: 3px solid white;
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 .profile-user-details .profile-pic img {
   width: 100%;
@@ -66,40 +84,61 @@ main {
   background-color: var(--Dark-blue);
   display: flex;
   flex-direction: column;
-  border-radius: 1.2rem;
+  border-radius: 1rem;
   padding: 2rem;
-  gap: 1rem;
+  gap: 1.35rem;
   position: relative;
-  transform: translateY(-4rem);
-  padding-top: 4rem;
-}
-.profile-nav::before {
-  content: "";
-  width: 100%;
-  height: 3rem;
-  background-color: var(--Blue);
+  padding-top: 3rem;
   position: absolute;
-  left: 0;
-  top: -0.1rem;
-  border-radius: 0rem 0rem 1.2rem 1.2rem;
+  inset: 0 0 0 0;
+  justify-content: flex-end;
 }
 .profile-nav a {
   color: var(--Pale-Blue);
   text-decoration: none;
   font-size: 1rem;
+  cursor: pointer;
 }
 .profile-nav a.active, .profile-nav a:hover {
   color: #fff;
 }
 
+.small-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.small-card:hover .card-details {
+  background-color: var(--Desaturated-blue);
+}
+.small-card:hover .card-bg::after {
+  background-color: var(--Desaturated-blue);
+}
 .small-card .card-bg {
-  height: 2rem;
+  height: 3.5rem;
+  border-radius: 1rem 1rem 0 0;
+  background-repeat: no-repeat;
+  background-position: 90%;
+  position: relative;
+}
+.small-card .card-bg::after {
+  content: "";
+  height: 1rem;
+  background-color: var(--Dark-blue);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 1rem 1rem 0 0;
 }
 .small-card .card-details {
   background-color: var(--Dark-blue);
   color: #fff;
-  padding: 1rem 2rem;
+  padding: 2rem;
+  padding-top: 1rem;
   box-sizing: border-box;
+  border-radius: 0 0 1rem 1rem;
+  cursor: pointer;
 }
 .small-card .card-details .card-header {
   display: flex;
@@ -108,6 +147,24 @@ main {
 }
 .small-card .card-details .card-header h3 {
   margin: 0;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.small-card .card-details .card-header img {
+  max-width: 1rem;
+  cursor: pointer;
+}
+.small-card .card-details h1 {
+  font-weight: 300;
+  font-size: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+.small-card .card-details p {
+  margin-bottom: 0;
+  color: var(--Pale-Blue);
+  font-weight: 400;
+  font-size: 0.9rem;
 }
 
 .work {
@@ -115,41 +172,47 @@ main {
 }
 .work .card-bg {
   background-color: var(--Light-red-work);
+  background-image: url(../../images/icon-work.svg);
 }
 
 .play {
   grid-area: card2;
 }
 .play .card-bg {
-  background-color: var(--Light-red-work);
+  background-color: var(--Soft-blue-play);
+  background-image: url(../../images/icon-play.svg);
 }
 
 .study {
   grid-area: card3;
 }
 .study .card-bg {
-  background-color: var(--Light-red-work);
+  background-color: var(--Light-red-study);
+  background-image: url(../../images/icon-study.svg);
 }
 
 .exercise {
   grid-area: card4;
 }
 .exercise .card-bg {
-  background-color: var(--Light-red-work);
+  background-color: var(--Lime-green-exercise);
+  background-image: url(../../images/icon-exercise.svg);
 }
 
 .social {
   grid-area: card5;
 }
 .social .card-bg {
-  background-color: var(--Light-red-work);
+  background-color: var(--Violet-social);
+  background-image: url(../../images/icon-social.svg);
 }
 
 .care {
   grid-area: card6;
 }
 .care .card-bg {
-  background-color: var(--Light-red-work);
+  background-color: var(--Soft-orange-self-care);
+  background-image: url(../../images/icon-self-care.svg);
 }
 
 /*# sourceMappingURL=main.css.map */
