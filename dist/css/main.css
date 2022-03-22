@@ -110,9 +110,11 @@ main {
 }
 .small-card:hover .card-details {
   background-color: var(--Desaturated-blue);
+  transform: translateY(-1rem);
 }
 .small-card:hover .card-bg::after {
   background-color: var(--Desaturated-blue);
+  transform: translateY(-1rem);
 }
 .small-card .card-bg {
   height: 3.5rem;
@@ -130,6 +132,7 @@ main {
   left: 0;
   right: 0;
   border-radius: 1rem 1rem 0 0;
+  transition: transform 0.3s ease;
 }
 .small-card .card-details {
   background-color: var(--Dark-blue);
@@ -139,6 +142,7 @@ main {
   box-sizing: border-box;
   border-radius: 0 0 1rem 1rem;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 .small-card .card-details .card-header {
   display: flex;

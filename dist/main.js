@@ -16,7 +16,6 @@ function fetchData(period){
 
 fetchData('daily');
 
-
 navLinks.forEach(link => {
     link.addEventListener('click', (e)=>{
         e.preventDefault;
